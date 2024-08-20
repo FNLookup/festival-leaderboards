@@ -191,7 +191,8 @@ def main():
         "token_type": "eg1"
     }
     authHeader = os.getenv('BASIC_AUTH')
-    token_eg1 = getEG1Token(eg1_params, authHeader)
+    eg1_data = getEG1Token(eg1_params, authHeader)
+    token_eg1 = eg1_data['access_token']
     expire_time = validtime(eg1_data['expires_at'])
 
     all_songs = getSongList()['tracks']
