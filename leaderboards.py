@@ -2,6 +2,8 @@ import os
 import requests
 
 def main():
+    print('Initializing...')
+    print('Generating Device Auth')
     eg1Params = {
         "grant_type": "device_auth",
         "account_id": os.getenv('ACCOUNT_ID'),
