@@ -1,5 +1,5 @@
 import os
-import eg1
+import requests
 
 def main():
     eg1Params = {
@@ -9,5 +9,12 @@ def main():
         "secret": os.getenv('SECRET'),
         "token_type": "eg1"
     }
-    token_eg1 = eg1.getEG1Token(eg1Params, os.getenv('BASIC_AUTH'))
+    token_eg1 = getEG1Token(eg1Params, os.getenv('BASIC_AUTH'))
     print(token_eg1)
+
+def getEG1Token(authParams, basicAuth):
+    request = requests.post('https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token', data=authParams, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': f"Basic {basicAuth}"})
+    json = request.json()
+    token = json['access_token']
+    print('Got token!')
+    return token
