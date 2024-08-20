@@ -20,3 +20,6 @@ def getEG1Token(authParams, basicAuth):
     token = json['access_token']
     print('Got token!')
     return token
+
+if __name__ == '__main__':
+    main()
