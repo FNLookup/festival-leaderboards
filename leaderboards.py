@@ -103,6 +103,7 @@ def parse_entry(data):
     entry = {
         "rank": data["rank"],
         "teamId": data["teamId"],
+        "userName": None,
         "best_run": {},
         "sessions": []
     }
@@ -190,6 +191,8 @@ def main():
 
     all_songs = getSongList()['tracks']
 
+    all_songs = all_songs[0:2]
+
     for song in all_songs:
         eventId = song['event_id']
         songId = song['id']
@@ -215,10 +218,11 @@ def main():
             _max_pages = 0
 
             while _current_pages < _max_pages:
-                print_progress_bar(donepages, len(instruments) * 5)
 
                 _current_pages += 1
                 donepages += 1
+
+                print_progress_bar(donepages, len(instruments) * 5)
 
                 #print('Page:', _current_pages)
                 leaderboard = getLeaderboardOf(eventId, token_eg1, instrument, _current_pages, season_number)
@@ -235,8 +239,6 @@ def main():
                 #print('Got leaderboard, saving')
 
                 makeDir(f'leaderboards/season{season_number}/{songId}/')
-                with open(f'leaderboards/season{season_number}/{songId}/{instrument}_{_current_pages}.json', 'w') as pageFile:
-                    pageFile.write(json.dumps(_leaderboard_parsed, indent=4))
 
                 #print('Obtaining user names with IDs')
 
@@ -253,8 +255,15 @@ def main():
 
                     #print('Got users, saving')
 
-                    with open(f'leaderboards/season{ss}/{sid}/{ins}_{pg}_Users.json', 'w') as usersFile:
-                        usersFile.write(json.dumps(users, indent=4))
+                    for entry in _leaderboard_parsed['entries']:
+                        if entry['teamId'] in users:
+                            entry['userName'] = users[entry['teamId']]['displayName']
+
+                    # with open(f'leaderboards/season{ss}/{sid}/{ins}_{pg}_Users.json', 'w') as usersFile:
+                    #     usersFile.write(json.dumps(users, indent=4))
+
+                with open(f'leaderboards/season{season_number}/{songId}/{instrument}_{_current_pages}.json', 'w') as pageFile:
+                    pageFile.write(json.dumps(_leaderboard_parsed, indent=4))
 
                 userthread = threading.Thread(target=userShit, args=(season_number, songId, instrument, _current_pages))
                 userthread.start()
