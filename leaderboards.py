@@ -225,7 +225,7 @@ def main():
 
             while _current_pages < _max_pages:
 
-                current_timestamp = datetime.utcnow().timestamp()
+                current_timestamp = datetime.datetime.now(datetime.UTC).timestamp()
                 if current_timestamp > expire_time:
                     print('WARNING: Regenerating EG1 Token, as it has expired.')
 
