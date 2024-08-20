@@ -194,9 +194,8 @@ def main():
         eventId = song['event_id']
         songId = song['id']
 
-        print('Found song\nID:', songId, '\nEvent ID:', eventId)
-
-        print('Getting leaderboard of', songId)
+        #print('Found song\nID:', songId, '\nEvent ID:', eventId)
+        print(f'Getting leaderboard of {songId} - {eventId}')
 
         instruments = [
             'Solo_Vocals',
@@ -259,8 +258,10 @@ def main():
 
                 userthread = threading.Thread(target=userShit, args=(season_number, songId, instrument, _current_pages))
                 userthread.start()
+        
+            print()
 
-    print("Done fetching")
+    print("Done fetching!")
 
 def getEG1Token(authParams, basicAuth):
     request = requests.post('https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token', data=authParams, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': f"Basic {basicAuth}"})
