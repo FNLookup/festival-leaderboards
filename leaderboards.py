@@ -5,6 +5,7 @@ import re
 import sys
 import threading
 import requests
+import copy
 
 def print_progress_bar(iteration, total, length=50):
     percent = ("{0:.1f}").format(100 * (iteration / float(total)))
@@ -187,11 +188,12 @@ def main():
         "secret": os.getenv('SECRET'),
         "token_type": "eg1"
     }
-    token_eg1 = getEG1Token(eg1_params, os.getenv('BASIC_AUTH'))
+    authHeader = os.getenv('BASIC_AUTH')
+    token_eg1 = getEG1Token(eg1_params, authHeader)
 
     all_songs = getSongList()['tracks']
 
-    all_songs = all_songs[0:2]
+    #all_songs = all_songs[0:1]
 
     for song in all_songs:
         eventId = song['event_id']
@@ -248,24 +250,28 @@ def main():
                     entryAccountId = entry['teamId']
                     _list_user_ids.append(entryAccountId)
 
-                def userShit(ss, sid, ins, pg):
+                def userShit(ss, sid, ins, pg, lb):
                     makeDir(f'leaderboards/season{ss}/{sid}/')
                     #print('Getting users')
                     users = getAccountIdsNames(_list_user_ids, token_eg1)
 
                     #print('Got users, saving')
 
-                    for entry in _leaderboard_parsed['entries']:
-                        if entry['teamId'] in users:
-                            entry['userName'] = users[entry['teamId']]['displayName']
+                    for i, entry in enumerate(lb['entries']):
+                        if entry['teamId'] in users.keys():
+                            copiedEntry = copy.deepcopy(entry)
+                            copiedEntry['userName'] = users[entry['teamId']]['displayName']
+                            lb['entries'][i] = copiedEntry
 
                     # with open(f'leaderboards/season{ss}/{sid}/{ins}_{pg}_Users.json', 'w') as usersFile:
                     #     usersFile.write(json.dumps(users, indent=4))
 
-                with open(f'leaderboards/season{season_number}/{songId}/{instrument}_{_current_pages}.json', 'w') as pageFile:
-                    pageFile.write(json.dumps(_leaderboard_parsed, indent=4))
+                    with open(f'leaderboards/season{ss}/{sid}/{ins}_{pg}.json', 'w') as pageFile:
+                        pageFile.write(json.dumps(lb, indent=4))
 
-                userthread = threading.Thread(target=userShit, args=(season_number, songId, instrument, _current_pages))
+                #userShit(season_number, songId, instrument, _current_pages)
+
+                userthread = threading.Thread(target=userShit, args=(season_number, songId, instrument, _current_pages, _leaderboard_parsed))
                 userthread.start()
         
             print()
