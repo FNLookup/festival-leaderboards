@@ -2,7 +2,7 @@ name: Main
 
 on:
     schedule:
-      - cron: '0 * * * *'
+      - cron: '00 00 * * *'
     push:
         branches: ['main']
     workflow_dispatch:
