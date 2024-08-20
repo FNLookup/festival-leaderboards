@@ -28,6 +28,7 @@ def getLeaderboardOf(su, eg1, instrument, page, season):
         'Authorization': f'Bearer {eg1}'
     }
     response = requests.request("GET", url, headers=headers)
+    response.raise_for_status()
     return response.json()
 
 def getAccountIdsNames(accountIDs, eg1_token):
@@ -46,6 +47,7 @@ def getAccountIdsNames(accountIDs, eg1_token):
     url = 'https://account-public-service-prod.ol.epicgames.com/account/api/public/account' + urlParams
 
     response = requests.request("GET", url, headers=headers, data="")
+    response.raise_for_status()
     users = response.json()
 
     _users_final = {}
@@ -178,7 +180,7 @@ def main():
     with open('meta.json', 'r') as f:
         meta = json.loads(f.read())
 
-    season_number = meta.get('season', 4)
+    season_number = meta.get('season', 5)
 
     print('Generating Device Auth EG1')
     eg1_params = {
@@ -190,6 +192,7 @@ def main():
     }
     authHeader = os.getenv('BASIC_AUTH')
     token_eg1 = getEG1Token(eg1_params, authHeader)
+    expire_time = validtime(eg1_data['expires_at'])
 
     all_songs = getSongList()['tracks']
 
@@ -220,6 +223,14 @@ def main():
             _max_pages = 0
 
             while _current_pages < _max_pages:
+
+                current_timestamp = datetime.utcnow().timestamp()
+                if current_timestamp > expire_time:
+                    print('WARNING: Regenerating EG1 Token, as it has expired.')
+
+                    eg1_data = getEG1Token(eg1_params, authHeader)
+                    token_eg1 = eg1_data['access_token']
+                    expire_time = validtime(eg1_data['expires_at'])
 
                 _current_pages += 1
                 donepages += 1
@@ -280,9 +291,10 @@ def main():
 
 def getEG1Token(authParams, basicAuth):
     request = requests.post('https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token', data=authParams, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': f"Basic {basicAuth}"})
+    request.raise_for_status()
     json = request.json()
-    token = json['access_token']
-    return token
+    #print(json)
+    return json
 
 def getSongList():
     url = 'https://raw.githubusercontent.com/FNLookup/data/main/festival/jam_tracks.json'
