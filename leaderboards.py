@@ -111,7 +111,7 @@ def parse_entry(data):
         "sessions": []
     }
 
-    _bestScoreYet = 0
+    _bestScoreYet = -1 # some people score zero and their best run isn't recorded
     _bestRun = {}
     for session in data["sessionHistory"]:
         score = session["trackedStats"]["SCORE"]
