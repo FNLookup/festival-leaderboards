@@ -2,7 +2,7 @@ name: Main
 
 on:
     schedule:
-      - cron: '00 1 * * *'
+      - cron: '5 1 * * *'
 
 permissions: write-all
 
