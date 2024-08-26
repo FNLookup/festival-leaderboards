@@ -7,6 +7,8 @@ import threading
 import requests
 import copy
 
+accid = os.getenv('ACCOUNT_ID')
+
 def print_progress_bar(iteration, total, length=50):
     percent = ("{0:.1f}").format(100 * (iteration / float(total)))
     filled_length = int(length * iteration // total)
@@ -22,7 +24,7 @@ def makeDir(folder_path):
             print('Error making folder: ', e)
 
 def getLeaderboardOf(su, eg1, instrument, page, season):
-    url = f"https://events-public-service-live.ol.epicgames.com/api/v1/leaderboards/FNFestival/season00{season}_{su}/{su}_{instrument}/3554e7171c554bdc8b38edb226fe6b0f?page={page}&rank=0&teamAccountIds=&appId=Fortnite&showLiveSessions=false"
+    url = f"https://events-public-service-live.ol.epicgames.com/api/v1/leaderboards/FNFestival/season00{season}_{su}/{su}_{instrument}/{accid}?page={page}&rank=0&teamAccountIds=&appId=Fortnite&showLiveSessions=false"
     headers = {
         'Accept': 'application/json',
         'Authorization': f'Bearer {eg1}'
