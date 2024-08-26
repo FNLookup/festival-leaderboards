@@ -25,10 +25,10 @@ jobs:
       - name: Fetch
         run: python leaderboards.py
         env:
-            ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}
+            ACCOUNT_ID: ${{ secrets.ACCOUNT_ID1 }}
             BASIC_AUTH: ${{ secrets.BASIC_AUTH }}
-            DEVICE_ID: ${{ secrets.DEVICE_ID }}
-            SECRET: ${{ secrets.SECRET }}
+            DEVICE_ID: ${{ secrets.DEVICE_ID1 }}
+            SECRET: ${{ secrets.SECRET1 }}
 
       - name: Commit and push artifact
         run: |
@@ -36,6 +36,6 @@ jobs:
             git config --global user.name "GitHub Actions"
             git pull
             git add .
-            git commit -m "Update Leaderboards"
+            git commit -m "Update Leaderboards (1 AM)"
             git push
     
