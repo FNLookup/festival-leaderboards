@@ -8,6 +8,8 @@ import requests
 import copy
 
 accid = os.getenv('ACCOUNT_ID')
+max_duration_eg1 = 6900 # nice
+eg1_made_at_time = 17
 
 def print_progress_bar(iteration, total, length=50):
     percent = ("{0:.1f}").format(100 * (iteration / float(total)))
@@ -62,25 +64,26 @@ def getAccountIdsNames(accountIDs, eg1_token):
 
         accountId = user['id']
         displayName = user.get('displayName', None)
-        # _external_platform_names = []
+        _external_platform_names = []
 
-        # for platform in user.get('externalAuths', []).keys():
-        #     _platform_data = user['externalAuths'][platform]
+        for platform in user.get('externalAuths', []).keys():
+            _platform_data = user['externalAuths'][platform]
 
-        #     _platform_auth_origin = _platform_data['type']
+            _platform_auth_origin = _platform_data['type']
 
-        #     if displayName == None:
-        #         displayName = _platform_data.get('externalDisplayName', 'Unknown competitor')
+            if displayName == None:
+                displayName = _platform_data.get('externalDisplayName', 'Unknown competitor')
                 
-        #     _platform_auth_name = _platform_data.get('externalDisplayName', displayName)
+            _platform_auth_name = _platform_data.get('externalDisplayName', displayName)
 
-        #     _external_platform_names.append({
-        #         'type': _platform_auth_origin,
-        #         'displayName': _platform_auth_name
-        #     })
+            _external_platform_names.append({
+                'type': _platform_auth_origin,
+                'displayName': _platform_auth_name
+            })
 
         _users_final[accountId] = {
-            'displayName': displayName
+            'displayName': displayName,
+            'externalNames': _external_platform_names
         }
 
     return _users_final
@@ -195,7 +198,7 @@ def main():
     authHeader = os.getenv('BASIC_AUTH')
     eg1_data = getEG1Token(eg1_params, authHeader)
     token_eg1 = eg1_data['access_token']
-    expire_time = validtime(eg1_data['expires_at'])
+    eg1_made_at_time = datetime.datetime.now().timestamp()
 
     all_songs = getSongList()['tracks']
 
@@ -227,13 +230,13 @@ def main():
 
             while _current_pages < _max_pages:
 
-                current_timestamp = datetime.datetime.now(datetime.UTC).timestamp()
-                if current_timestamp > expire_time:
-                    print('WARNING: Regenerating EG1 Token, as it has expired.')
+                current_timestamp = datetime.datetime.now().timestamp()
+                if current_timestamp > (eg1_made_at_time + max_duration_eg1):
+                    print('WARNING: Regenerating EG1 Token, as it will expire soon.\n' * 10)
 
                     eg1_data = getEG1Token(eg1_params, authHeader)
                     token_eg1 = eg1_data['access_token']
-                    expire_time = validtime(eg1_data['expires_at'])
+                    eg1_made_at_time = datetime.datetime.now().timestamp()
 
                 _current_pages += 1
                 donepages += 1
@@ -274,7 +277,11 @@ def main():
                     for i, entry in enumerate(lb['entries']):
                         if entry['teamId'] in users.keys():
                             copiedEntry = copy.deepcopy(entry)
-                            copiedEntry['userName'] = users[entry['teamId']]['displayName']
+                            uname_to_use = users[entry['teamId']]['displayName']
+                            if uname_to_use:
+                                copiedEntry['userName'] = uname_to_use
+                            elif len(users[entry['teamId']]['externalNames']) > 1:
+                                copiedEntry['userName'] = '[' + users[entry['teamId']]['externalNames'][0]['type'] + '] ' + users[entry['teamId']]['externalNames'][0]['displayName']
                             lb['entries'][i] = copiedEntry
 
                     # with open(f'leaderboards/season{ss}/{sid}/{ins}_{pg}_Users.json', 'w') as usersFile:
