@@ -8,13 +8,16 @@ import requests
 import copy
 
 accid = os.getenv('ACCOUNT_ID')
+    
 max_duration_eg1 = 6900 # nice
+bar_is_allowed_b = True
 eg1_made_at_time = 17
 
 def print_progress_bar(iteration, total, length=50):
     percent = ("{0:.1f}").format(100 * (iteration / float(total)))
     filled_length = int(length * iteration // total)
     bar = '█' * filled_length + '-' * (length - filled_length)
+    if not bar_is_allowed_b: return
     sys.stdout.write(f'\r|{bar}| {percent}% Complete')
     sys.stdout.flush()
 
@@ -189,6 +192,7 @@ def main():
 
     print('Generating Device Auth EG1')
     eg1_params = {
+
         "grant_type": "device_auth",
         "account_id": os.getenv('ACCOUNT_ID'),
         "device_id": os.getenv('DEVICE_ID'),
@@ -196,6 +200,7 @@ def main():
         "token_type": "eg1"
     }
     authHeader = os.getenv('BASIC_AUTH')
+
     eg1_data = getEG1Token(eg1_params, authHeader)
     token_eg1 = eg1_data['access_token']
     eg1_made_at_time = datetime.datetime.now().timestamp()
@@ -281,7 +286,10 @@ def main():
                             if uname_to_use:
                                 copiedEntry['userName'] = uname_to_use
                             elif len(users[entry['teamId']]['externalNames']) > 1:
-                                copiedEntry['userName'] = '[' + users[entry['teamId']]['externalNames'][0]['type'] + '] ' + users[entry['teamId']]['externalNames'][0]['displayName']
+                                uplat = users[entry['teamId']]['externalNames'][0]['type']
+                                uplatdname = users[entry['teamId']]['externalNames'][0]['displayName']
+                                finalname = '[' + uplat + '] ' + uplatdname
+                                copiedEntry['userName'] = finalname
                             lb['entries'][i] = copiedEntry
 
                     # with open(f'leaderboards/season{ss}/{sid}/{ins}_{pg}_Users.json', 'w') as usersFile:
