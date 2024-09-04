@@ -2,7 +2,7 @@ name: Main (1 PM)
 
 on:
     schedule:
-      - cron: '0 13 * * *'
+      - cron: '0 14 * * *'
     workflow_dispatch:
 
 permissions: write-all
