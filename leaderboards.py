@@ -35,7 +35,11 @@ def getLeaderboardOf(su, eg1, instrument, page, season):
         'Authorization': f'Bearer {eg1}'
     }
     response = requests.request("GET", url, headers=headers)
-    response.raise_for_status()
+    if response.status_code != 404:
+        response.raise_for_status()
+    else:
+        print('WARNING: 404 ERROR\n' * 20)
+        return
     return response.json()
 
 def getAccountIdsNames(accountIDs, eg1_token):
@@ -250,6 +254,8 @@ def main():
 
                 #print('Page:', _current_pages)
                 leaderboard = getLeaderboardOf(eventId, token_eg1, instrument, _current_pages, season_number)
+                if not leaderboard:
+                    continue
                 _max_pages = leaderboard.get('totalPages', 1) - 1
 
                 _leaderboard_parsed = {
