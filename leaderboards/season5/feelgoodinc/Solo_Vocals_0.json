@@ -4670,65 +4670,13 @@
             "userName": "BerryCitrus",
             "best_run": {
                 "accuracy": 100,
-                "score": 141695,
+                "score": 141704,
                 "difficulty": 3,
                 "instrument": 2,
                 "stars": 6,
                 "fullcombo": true
             },
             "sessions": [
-                {
-                    "time": 1727389754.292,
-                    "valid": {
-                        "accuracy": 100,
-                        "score": 139530,
-                        "difficulty": 3,
-                        "instrument": 2,
-                        "stars": 6,
-                        "fullcombo": true
-                    },
-                    "stats": {
-                        "band": {
-                            "accuracy": 96,
-                            "fullcombo": false,
-                            "stars": 5,
-                            "scores": {
-                                "overdrive_bonus": 74287,
-                                "base_score": 213685,
-                                "total": 305330
-                            }
-                        },
-                        "players": [
-                            {
-                                "accuracy": 99,
-                                "score": 28931,
-                                "difficulty": 0,
-                                "instrument": 2,
-                                "fullcombo": false,
-                                "stars": 5,
-                                "is_valid_entry": false
-                            },
-                            {
-                                "accuracy": 100,
-                                "score": 139530,
-                                "difficulty": 3,
-                                "instrument": 2,
-                                "fullcombo": true,
-                                "stars": 6,
-                                "is_valid_entry": true
-                            },
-                            {
-                                "accuracy": 89,
-                                "score": 45223,
-                                "difficulty": 3,
-                                "instrument": 0,
-                                "fullcombo": false,
-                                "stars": 4,
-                                "is_valid_entry": false
-                            }
-                        ]
-                    }
-                },
                 {
                     "time": 1727474550.093,
                     "valid": {
@@ -5053,6 +5001,40 @@
                             {
                                 "accuracy": 100,
                                 "score": 141231,
+                                "difficulty": 3,
+                                "instrument": 2,
+                                "fullcombo": true,
+                                "stars": 6,
+                                "is_valid_entry": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": 1729095849.736,
+                    "valid": {
+                        "accuracy": 100,
+                        "score": 141704,
+                        "difficulty": 3,
+                        "instrument": 2,
+                        "stars": 6,
+                        "fullcombo": true
+                    },
+                    "stats": {
+                        "band": {
+                            "accuracy": 100,
+                            "fullcombo": true,
+                            "stars": 5,
+                            "scores": {
+                                "overdrive_bonus": 0,
+                                "base_score": 141704,
+                                "total": 141704
+                            }
+                        },
+                        "players": [
+                            {
+                                "accuracy": 100,
+                                "score": 141704,
                                 "difficulty": 3,
                                 "instrument": 2,
                                 "fullcombo": true,
