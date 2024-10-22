@@ -802,47 +802,13 @@
             "userName": "boop.bap",
             "best_run": {
                 "accuracy": 100,
-                "score": 210353,
+                "score": 210380,
                 "difficulty": 3,
                 "instrument": 0,
                 "stars": 6,
                 "fullcombo": true
             },
             "sessions": [
-                {
-                    "time": 1724925340.305,
-                    "valid": {
-                        "accuracy": 39,
-                        "score": 21983,
-                        "difficulty": 3,
-                        "instrument": 0,
-                        "stars": 1,
-                        "fullcombo": false
-                    },
-                    "stats": {
-                        "band": {
-                            "accuracy": 39,
-                            "fullcombo": false,
-                            "stars": 1,
-                            "scores": {
-                                "overdrive_bonus": 0,
-                                "base_score": 21983,
-                                "total": 21983
-                            }
-                        },
-                        "players": [
-                            {
-                                "accuracy": 39,
-                                "score": 21983,
-                                "difficulty": 3,
-                                "instrument": 0,
-                                "fullcombo": false,
-                                "stars": 1,
-                                "is_valid_entry": true
-                            }
-                        ]
-                    }
-                },
                 {
                     "time": 1725061082.417,
                     "valid": {
@@ -1230,6 +1196,40 @@
                             {
                                 "accuracy": 100,
                                 "score": 210353,
+                                "difficulty": 3,
+                                "instrument": 0,
+                                "fullcombo": true,
+                                "stars": 6,
+                                "is_valid_entry": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": 1729564505.066,
+                    "valid": {
+                        "accuracy": 100,
+                        "score": 210380,
+                        "difficulty": 3,
+                        "instrument": 0,
+                        "stars": 6,
+                        "fullcombo": true
+                    },
+                    "stats": {
+                        "band": {
+                            "accuracy": 100,
+                            "fullcombo": true,
+                            "stars": 5,
+                            "scores": {
+                                "overdrive_bonus": 0,
+                                "base_score": 210380,
+                                "total": 210380
+                            }
+                        },
+                        "players": [
+                            {
+                                "accuracy": 100,
+                                "score": 210380,
                                 "difficulty": 3,
                                 "instrument": 0,
                                 "fullcombo": true,
