@@ -5127,56 +5127,13 @@
             "userName": "BSD Rigster",
             "best_run": {
                 "accuracy": 100,
-                "score": 194370,
+                "score": 194544,
                 "difficulty": 3,
                 "instrument": 3,
                 "stars": 6,
                 "fullcombo": true
             },
             "sessions": [
-                {
-                    "time": 1727410726.377,
-                    "valid": {
-                        "accuracy": 100,
-                        "score": 194370,
-                        "difficulty": 3,
-                        "instrument": 3,
-                        "stars": 6,
-                        "fullcombo": true
-                    },
-                    "stats": {
-                        "band": {
-                            "accuracy": 99,
-                            "fullcombo": false,
-                            "stars": 5,
-                            "scores": {
-                                "overdrive_bonus": 53718,
-                                "base_score": 321762,
-                                "total": 375480
-                            }
-                        },
-                        "players": [
-                            {
-                                "accuracy": 98,
-                                "score": 127392,
-                                "difficulty": 3,
-                                "instrument": 3,
-                                "fullcombo": false,
-                                "stars": 5,
-                                "is_valid_entry": false
-                            },
-                            {
-                                "accuracy": 100,
-                                "score": 194370,
-                                "difficulty": 3,
-                                "instrument": 3,
-                                "fullcombo": true,
-                                "stars": 6,
-                                "is_valid_entry": true
-                            }
-                        ]
-                    }
-                },
                 {
                     "time": 1727675900.763,
                     "valid": {
@@ -5560,6 +5517,40 @@
                                 "fullcombo": true,
                                 "stars": 6,
                                 "is_valid_entry": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": 1730102072.228,
+                    "valid": {
+                        "accuracy": 100,
+                        "score": 194544,
+                        "difficulty": 3,
+                        "instrument": 3,
+                        "stars": 6,
+                        "fullcombo": true
+                    },
+                    "stats": {
+                        "band": {
+                            "accuracy": 100,
+                            "fullcombo": true,
+                            "stars": 5,
+                            "scores": {
+                                "overdrive_bonus": 0,
+                                "base_score": 194544,
+                                "total": 194544
+                            }
+                        },
+                        "players": [
+                            {
+                                "accuracy": 100,
+                                "score": 194544,
+                                "difficulty": 3,
+                                "instrument": 3,
+                                "fullcombo": true,
+                                "stars": 6,
+                                "is_valid_entry": true
                             }
                         ]
                     }
