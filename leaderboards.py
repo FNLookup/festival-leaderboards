@@ -35,10 +35,10 @@ def getLeaderboardOf(su, eg1, instrument, page, season):
         'Authorization': f'Bearer {eg1}'
     }
     response = requests.request("GET", url, headers=headers)
-    if response.status_code != 404:
+    if response.status_code != 404 and response.status_code != 500:
         response.raise_for_status()
     else:
-        print('WARNING: 404 ERROR\n' * 20)
+        print('WARNING: ' + str(response.status_code) +  ' ERROR\n' * 20)
         return
     return response.json()
 
