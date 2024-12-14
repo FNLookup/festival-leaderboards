@@ -35,7 +35,6 @@ def getLeaderboardOf(su, eg1, instrument, page, season):
         'Authorization': f'Bearer {eg1}'
     }
     response = requests.request("GET", url, headers=headers)
-    print(response.text)
     if response.status_code != 404 and response.status_code != 500:
         response.raise_for_status()
     else:
@@ -316,7 +315,6 @@ def main():
 
 def getEG1Token(authParams, basicAuth):
     request = requests.post('https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token', data=authParams, headers={'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': f"Basic {basicAuth}"})
-    print(request.text)
     request.raise_for_status()
     json = request.json()
     #print(json)
