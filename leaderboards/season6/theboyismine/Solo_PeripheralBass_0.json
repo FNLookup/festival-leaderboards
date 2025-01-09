@@ -130,48 +130,14 @@
             "teamId": "19edb022a08942d5a9827a5877a4b42a",
             "userName": "Smol Yui",
             "best_run": {
-                "accuracy": 96,
-                "score": 61193,
+                "accuracy": 100,
+                "score": 61548,
                 "difficulty": 3,
                 "instrument": 5,
                 "stars": 6,
-                "fullcombo": false
+                "fullcombo": true
             },
             "sessions": [
-                {
-                    "time": 1736149227.129,
-                    "valid": {
-                        "accuracy": 98,
-                        "score": 34718,
-                        "difficulty": 3,
-                        "instrument": 5,
-                        "stars": 5,
-                        "fullcombo": false
-                    },
-                    "stats": {
-                        "band": {
-                            "accuracy": 98,
-                            "fullcombo": false,
-                            "stars": 3,
-                            "scores": {
-                                "overdrive_bonus": 0,
-                                "base_score": 34718,
-                                "total": 34718
-                            }
-                        },
-                        "players": [
-                            {
-                                "accuracy": 98,
-                                "score": 34718,
-                                "difficulty": 3,
-                                "instrument": 5,
-                                "fullcombo": false,
-                                "stars": 5,
-                                "is_valid_entry": true
-                            }
-                        ]
-                    }
-                },
                 {
                     "time": 1736149469.219,
                     "valid": {
@@ -490,6 +456,40 @@
                                 "difficulty": 3,
                                 "instrument": 5,
                                 "fullcombo": false,
+                                "stars": 6,
+                                "is_valid_entry": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": 1736346054.906,
+                    "valid": {
+                        "accuracy": 100,
+                        "score": 61548,
+                        "difficulty": 3,
+                        "instrument": 5,
+                        "stars": 6,
+                        "fullcombo": true
+                    },
+                    "stats": {
+                        "band": {
+                            "accuracy": 100,
+                            "fullcombo": true,
+                            "stars": 5,
+                            "scores": {
+                                "overdrive_bonus": 0,
+                                "base_score": 61548,
+                                "total": 61548
+                            }
+                        },
+                        "players": [
+                            {
+                                "accuracy": 100,
+                                "score": 61548,
+                                "difficulty": 3,
+                                "instrument": 5,
+                                "fullcombo": true,
                                 "stars": 6,
                                 "is_valid_entry": true
                             }
