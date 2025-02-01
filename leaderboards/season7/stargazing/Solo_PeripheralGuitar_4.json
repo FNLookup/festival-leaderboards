@@ -517,11 +517,11 @@
             "userName": "Worx1",
             "best_run": {
                 "accuracy": 100,
-                "score": 74022,
+                "score": 74026,
                 "difficulty": 1,
                 "instrument": 4,
                 "stars": 5,
-                "fullcombo": true
+                "fullcombo": false
             },
             "sessions": [
                 {
@@ -803,6 +803,40 @@
                                 "fullcombo": false,
                                 "stars": 6,
                                 "is_valid_entry": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": 1738368668.168,
+                    "valid": {
+                        "accuracy": 100,
+                        "score": 74026,
+                        "difficulty": 1,
+                        "instrument": 4,
+                        "stars": 5,
+                        "fullcombo": false
+                    },
+                    "stats": {
+                        "band": {
+                            "accuracy": 100,
+                            "fullcombo": false,
+                            "stars": 4,
+                            "scores": {
+                                "overdrive_bonus": 0,
+                                "base_score": 74026,
+                                "total": 74026
+                            }
+                        },
+                        "players": [
+                            {
+                                "accuracy": 100,
+                                "score": 74026,
+                                "difficulty": 1,
+                                "instrument": 4,
+                                "fullcombo": false,
+                                "stars": 5,
+                                "is_valid_entry": true
                             }
                         ]
                     }
