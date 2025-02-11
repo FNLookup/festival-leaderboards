@@ -1202,11 +1202,11 @@
             "userName": "PeytonMonkee",
             "best_run": {
                 "accuracy": 100,
-                "score": 90762,
+                "score": 90798,
                 "difficulty": 3,
                 "instrument": 1,
                 "stars": 6,
-                "fullcombo": true
+                "fullcombo": false
             },
             "sessions": [
                 {
@@ -1308,6 +1308,49 @@
                                 "instrument": 2,
                                 "fullcombo": false,
                                 "stars": 4,
+                                "is_valid_entry": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": 1739233375.429,
+                    "valid": {
+                        "accuracy": 100,
+                        "score": 90798,
+                        "difficulty": 3,
+                        "instrument": 1,
+                        "stars": 6,
+                        "fullcombo": false
+                    },
+                    "stats": {
+                        "band": {
+                            "accuracy": 99,
+                            "fullcombo": false,
+                            "stars": 5,
+                            "scores": {
+                                "overdrive_bonus": 58069,
+                                "base_score": 261973,
+                                "total": 341263
+                            }
+                        },
+                        "players": [
+                            {
+                                "accuracy": 100,
+                                "score": 90798,
+                                "difficulty": 3,
+                                "instrument": 1,
+                                "fullcombo": false,
+                                "stars": 6,
+                                "is_valid_entry": true
+                            },
+                            {
+                                "accuracy": 98,
+                                "score": 171175,
+                                "difficulty": 3,
+                                "instrument": 2,
+                                "fullcombo": false,
+                                "stars": 5,
                                 "is_valid_entry": false
                             }
                         ]
