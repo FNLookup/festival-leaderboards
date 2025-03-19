@@ -1570,11 +1570,11 @@
             "userName": "t-girl jane",
             "best_run": {
                 "accuracy": 100,
-                "score": 234384,
+                "score": 234690,
                 "difficulty": 3,
                 "instrument": 1,
                 "stars": 6,
-                "fullcombo": true
+                "fullcombo": false
             },
             "sessions": [
                 {
@@ -1607,6 +1607,49 @@
                                 "fullcombo": true,
                                 "stars": 6,
                                 "is_valid_entry": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": 1742353853.92,
+                    "valid": {
+                        "accuracy": 100,
+                        "score": 234690,
+                        "difficulty": 3,
+                        "instrument": 1,
+                        "stars": 6,
+                        "fullcombo": false
+                    },
+                    "stats": {
+                        "band": {
+                            "accuracy": 99,
+                            "fullcombo": false,
+                            "stars": 6,
+                            "scores": {
+                                "overdrive_bonus": 79044,
+                                "base_score": 408054,
+                                "total": 521303
+                            }
+                        },
+                        "players": [
+                            {
+                                "accuracy": 100,
+                                "score": 234690,
+                                "difficulty": 3,
+                                "instrument": 1,
+                                "fullcombo": false,
+                                "stars": 6,
+                                "is_valid_entry": true
+                            },
+                            {
+                                "accuracy": 99,
+                                "score": 173364,
+                                "difficulty": 3,
+                                "instrument": 3,
+                                "fullcombo": false,
+                                "stars": 6,
+                                "is_valid_entry": false
                             }
                         ]
                     }
