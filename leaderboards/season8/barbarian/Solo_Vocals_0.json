@@ -3423,65 +3423,13 @@
             "userName": "KrisKringle98",
             "best_run": {
                 "accuracy": 100,
-                "score": 182589,
+                "score": 182642,
                 "difficulty": 3,
                 "instrument": 2,
                 "stars": 6,
                 "fullcombo": true
             },
             "sessions": [
-                {
-                    "time": 1744208418.366,
-                    "valid": {
-                        "accuracy": 99,
-                        "score": 182073,
-                        "difficulty": 3,
-                        "instrument": 2,
-                        "stars": 6,
-                        "fullcombo": false
-                    },
-                    "stats": {
-                        "band": {
-                            "accuracy": 98,
-                            "fullcombo": false,
-                            "stars": 6,
-                            "scores": {
-                                "overdrive_bonus": 46321,
-                                "base_score": 230349,
-                                "total": 314085
-                            }
-                        },
-                        "players": [
-                            {
-                                "accuracy": 98,
-                                "score": 23280,
-                                "difficulty": 1,
-                                "instrument": 3,
-                                "fullcombo": false,
-                                "stars": 4,
-                                "is_valid_entry": false
-                            },
-                            {
-                                "accuracy": 98,
-                                "score": 24996,
-                                "difficulty": 1,
-                                "instrument": 0,
-                                "fullcombo": false,
-                                "stars": 5,
-                                "is_valid_entry": false
-                            },
-                            {
-                                "accuracy": 99,
-                                "score": 182073,
-                                "difficulty": 3,
-                                "instrument": 2,
-                                "fullcombo": false,
-                                "stars": 6,
-                                "is_valid_entry": true
-                            }
-                        ]
-                    }
-                },
                 {
                     "time": 1744316878.88,
                     "valid": {
@@ -3883,6 +3831,40 @@
                                 "fullcombo": false,
                                 "stars": 5,
                                 "is_valid_entry": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": 1747958720.598,
+                    "valid": {
+                        "accuracy": 100,
+                        "score": 182642,
+                        "difficulty": 3,
+                        "instrument": 2,
+                        "stars": 6,
+                        "fullcombo": true
+                    },
+                    "stats": {
+                        "band": {
+                            "accuracy": 100,
+                            "fullcombo": true,
+                            "stars": 5,
+                            "scores": {
+                                "overdrive_bonus": 0,
+                                "base_score": 182642,
+                                "total": 182642
+                            }
+                        },
+                        "players": [
+                            {
+                                "accuracy": 100,
+                                "score": 182642,
+                                "difficulty": 3,
+                                "instrument": 2,
+                                "fullcombo": true,
+                                "stars": 6,
+                                "is_valid_entry": true
                             }
                         ]
                     }
