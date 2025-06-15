@@ -7567,49 +7567,6 @@
             },
             "sessions": [
                 {
-                    "time": 1745385287.277,
-                    "valid": {
-                        "accuracy": 99,
-                        "score": 183018,
-                        "difficulty": 3,
-                        "instrument": 0,
-                        "stars": 6,
-                        "fullcombo": false
-                    },
-                    "stats": {
-                        "band": {
-                            "accuracy": 98,
-                            "fullcombo": false,
-                            "stars": 5,
-                            "scores": {
-                                "overdrive_bonus": 25721,
-                                "base_score": 218238,
-                                "total": 262290
-                            }
-                        },
-                        "players": [
-                            {
-                                "accuracy": 99,
-                                "score": 183018,
-                                "difficulty": 3,
-                                "instrument": 0,
-                                "fullcombo": false,
-                                "stars": 6,
-                                "is_valid_entry": true
-                            },
-                            {
-                                "accuracy": 98,
-                                "score": 35220,
-                                "difficulty": 0,
-                                "instrument": 2,
-                                "fullcombo": false,
-                                "stars": 5,
-                                "is_valid_entry": false
-                            }
-                        ]
-                    }
-                },
-                {
                     "time": 1746596469.649,
                     "valid": {
                         "accuracy": 100,
@@ -8023,6 +7980,40 @@
                             {
                                 "accuracy": 100,
                                 "score": 191262,
+                                "difficulty": 3,
+                                "instrument": 0,
+                                "fullcombo": true,
+                                "stars": 6,
+                                "is_valid_entry": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "time": 1749916711.433,
+                    "valid": {
+                        "accuracy": 100,
+                        "score": 191928,
+                        "difficulty": 3,
+                        "instrument": 0,
+                        "stars": 6,
+                        "fullcombo": true
+                    },
+                    "stats": {
+                        "band": {
+                            "accuracy": 100,
+                            "fullcombo": true,
+                            "stars": 5,
+                            "scores": {
+                                "overdrive_bonus": 0,
+                                "base_score": 191928,
+                                "total": 191928
+                            }
+                        },
+                        "players": [
+                            {
+                                "accuracy": 100,
+                                "score": 191928,
                                 "difficulty": 3,
                                 "instrument": 0,
                                 "fullcombo": true,
