@@ -29,7 +29,7 @@ def makeDir(folder_path):
             print('Error making folder: ', e)
 
 def getLeaderboardOf(su, eg1, instrument, page, season):
-    url = f"https://events-public-service-live.ol.epicgames.com/api/v1/leaderboards/FNFestival/season00{season}_{su}/{su}_{instrument}/{accid}?page={page}&rank=0&teamAccountIds=&appId=Fortnite&showLiveSessions=false"
+    url = f"https://events-public-service-live.ol.epicgames.com/api/v1/leaderboards/FNFestival/season0{season}_{su}/{su}_{instrument}/{accid}?page={page}&rank=0&teamAccountIds=&appId=Fortnite&showLiveSessions=false"
     headers = {
         'Accept': 'application/json',
         'Authorization': f'Bearer {eg1}'
