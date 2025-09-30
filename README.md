@@ -6,3 +6,4 @@ Public 500-rank leaderboard dumps for Festival.
 2. September 5, 2024 - They added some random song with an invalid leaderboard and it broke
 3. December 10-15, 2024 - For almost 3 days, leaderboards were down, while the remaining days were full of server errors
 4. December 13, 2024 - OAuth client `fortniteIOSGameClient` was disabled
+5. September 9, 2025 - Leaderboards discontinued. Logs are too large and this service is hard to maintain
